@@ -38,36 +38,7 @@ pipeline {
         stage('deploy') {
             steps {
                 script {
-                    gv.deployApp() 
-			sshPublisher(
-					publishers: 
-					     [
-						     sshPublisherDesc
-						     (
-							configName: 'server2', 
-							transfers: 
-							[
-								sshTransfer(
-									cleanRemote: false, 
-									excludes: '', 
-									execCommand: 'kubectl set image deployment/simpleapp-deployment simpleapp-container=mfarhan1998/simpleapp:${BUILD_NUMBER} --record', 
-									execTimeout: 120000, 
-									flatten: false, 
-									makeEmptyDirs: false, 
-									noDefaultExcludes: false, 
-									patternSeparator: '[, ]+', 
-									remoteDirectory: '', 
-									remoteDirectorySDF: false, 
-									removePrefix: '', 
-									sourceFiles: ''
-								)
-						], 
-						usePromotionTimestamp: false, 
-						useWorkspaceInPromotion: false, 
-						verbose: false
-						     )
-					     ]
-				    )
+                   build "https://github.com/farru1998/jenkins-different-repo-Code.git"
                 }
             }
         }
