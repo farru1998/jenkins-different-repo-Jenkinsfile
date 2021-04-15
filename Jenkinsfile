@@ -30,7 +30,7 @@ pipeline {
         stage('deploy') {
             steps {
                 script {
-                   build "https://github.com/farru1998/jenkins-different-repo-Code.git"
+			build '${code-repo}'
                 }
             }
         }
