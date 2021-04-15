@@ -35,12 +35,5 @@ pipeline {
                 }
             }
         } 
-        stage('deploy') {
-            steps {
-                script {
-			build '${code-repo}'
-                }
-            }
-        }
     }
 }
