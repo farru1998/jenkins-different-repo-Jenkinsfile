@@ -11,13 +11,6 @@ library identifier: 'js-jenkins-shared-library@main', retriever: modernSCM(
 pipeline {
     agent any
     stages {
-        stage('check branch') {
-            steps {
-                script {
-                    branch()
-                }
-            }
-        }
 	stage('build and push image') {
             steps {
                 script {
