@@ -3,7 +3,7 @@
 library identifier: 'js-jenkins-shared-library@main', retriever: modernSCM(
         [$class: 'GitSCMSource',
          remote: 'https://github.com/farru1998/js-shared-library-main.git',
-         credentialsId: 'github-credentials'
+         credentialsId: 'git-credentials'
         ]
 )
 
